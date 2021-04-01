@@ -12,11 +12,12 @@ import java.util.Date;
  * @created 3/31/21 - 10:48 AM
  */
 
+@MappedSuperclass
 public abstract class AbstractEntity<PK extends Serializable> extends AbstractPersistable<PK> {
 
     @Basic(optional = false)
     @Temporal(TemporalType.TIMESTAMP)
-    private Date created;
+    private Date created = new Date();
 
     @Basic
     @Temporal(TemporalType.TIMESTAMP)
