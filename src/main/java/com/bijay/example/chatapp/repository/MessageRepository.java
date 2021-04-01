@@ -40,7 +40,7 @@ public interface MessageRepository extends JpaRepository<Message, Long> {
     @Query("select msg.conversation from Message msg where msg.id=?1")
     Conversation findConversationByMessageId(Long msgId);
 
-    @Query("select msg.fromUserId from Message msg where msg.bankId=?1 and msg.msgId=?2")
+    @Query("select msg.fromUserId from Message msg where msg.bankId=?1 and msg.id=?2")
     Long findToUserIdByMessageIdAndBankId(Long bankId, Long msgId);
 
 }
