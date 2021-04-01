@@ -40,6 +40,9 @@ public class FileHandler {
 
 ## Explore Rest APIs
 
+(update: Now I have just added Swagger2 API documentation, so you can just run the application and explore endpoints):
+</br>url: `http://127.0.0.1:8080/swagger-ui.html` .
+
 The app defines following CRUD APIs.
 
     POST /chatServer/user/message/save
