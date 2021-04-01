@@ -1,10 +1,7 @@
 package com.bijay.example.chatapp.controller;
 
 import com.bijay.example.chatapp.dto.ConversationDTO;
-import com.bijay.example.chatapp.dto.MessageDTO;
 import com.bijay.example.chatapp.model.Message;
-import com.bijay.example.chatapp.repository.ConversationRepository;
-import com.bijay.example.chatapp.repository.MessageRepository;
 import com.bijay.example.chatapp.service.ConversationService;
 import com.bijay.example.chatapp.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
