@@ -13,25 +13,20 @@ boilerplate codes, DevTools, Actuators and more.
 - For this: I have used two libraries **apache-commons** and **commons.io**
 - Dependencies: look in build.gradle file
 
-`
-implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.0' implementation group: 'commons-io', name: 'commons-io', version: '2.8.0'
-`
+`implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'`
+
+`implementation group: 'commons-io', name: 'commons-io', version: '2.8.0'`
 
 - so the files are saved in the file system of your PC or server.
 - as I specified inside **FileHandler.java** file:
 
 ```java
 import org.apache.commons.lang3.SystemUtils;
-
 public class FileHandler {
     String filePath;
-    if(SystemUtils.IS_OS_LINUX)
-
-    {
+    if(SystemUtils.IS_OS_LINUX) {
         filePath = "/opt/mbank/chatimage";
-    } else
-
-    {
+    } else {
         filePath = "D:/mbank/chatimage";
     }
 }
@@ -112,11 +107,8 @@ spring.jpa.show-sql=true
     ```
 
 1. ```bash
-    ./gradlew 
-    ```
-
-1. ```bash
     $ gradle check
     ```
 
 **with luck, it should work :)**
+Updates are comming...
