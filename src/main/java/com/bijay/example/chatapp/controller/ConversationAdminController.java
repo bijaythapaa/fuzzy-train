@@ -45,8 +45,8 @@ public class ConversationAdminController {
         return Sort.Direction.ASC;
     }
 
-    private List<Sort.Order> getOrders(String[] sort) {
-        List<Sort.Order> orders = new ArrayList<>();
+    private List<Order> getOrders(String[] sort) {
+        List<Order> orders = new ArrayList<>();
         if (sort[0].contains(",")) {
             for (String sortOrder : sort) {
                 String[] _sort = sortOrder.split(",");
@@ -60,7 +60,6 @@ public class ConversationAdminController {
 
     @GetMapping("/conversations/all")
     public ResponseEntity<Map<String, Object>> getAllConversationAdminPages(
-            @RequestParam(value = "userId") String userId,
             @RequestParam(value = "bankId") String bankId,
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size,
