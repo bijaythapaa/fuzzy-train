@@ -74,7 +74,7 @@ public class ConversationService {
 
     @Transactional
     public Page<ConversationDTO> getAllConversationPages(Long bankId, Pageable pageable) {
-        Page<Conversation> conversations = conversationRepository.findAllByBank(bankId, pageable);
+        Page<Conversation> conversations = conversationRepository.findAllByBankId(bankId, pageable);
         List<ConversationDTO> conversationDTOS = convertToConversationDTO(conversations.getContent());
         return new PageImpl<>(conversationDTOS, pageable, conversations.getSize());
     }
