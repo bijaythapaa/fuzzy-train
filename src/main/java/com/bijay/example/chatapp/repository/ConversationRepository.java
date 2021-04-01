@@ -20,11 +20,15 @@ public interface ConversationRepository extends JpaRepository<Conversation, Long
 
     Conversation getConversationById(Long id);
 
-    @Query("select con from Conversation con where con.userId=?1 and con.bankId=?2")
     Conversation findConversationByUserIdAndBankId(Long userId, Long bankId);
 
-    @Query("select con from Conversation con where con.bankId=?1")
-    Page<Conversation> findAllByBank(Long bankId, Pageable pageable);
+    Page<Conversation> findAllByBankId(Long bankId, Pageable pageable);
+
+//    @Query("select con from Conversation con where con.userId=?1 and con.bankId=?2")
+//    Conversation findConversationByUserIdAndBankId(Long userId, Long bankId);
+
+//    @Query("select con from Conversation con where con.bankId=?1")
+//    Page<Conversation> findAllByBankId(Long bankId, Pageable pageable);
 
 //    @Query("select con from Conversation con where con.user.id=?1 and con.bank.id=?2")
 //    List<Conversation> findAllByUserAndBank(Long userId, Long BankId);
