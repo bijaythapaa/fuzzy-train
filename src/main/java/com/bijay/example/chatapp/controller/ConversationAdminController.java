@@ -3,7 +3,10 @@ package com.bijay.example.chatapp.controller;
 import com.bijay.example.chatapp.dto.ConversationDTO;
 import com.bijay.example.chatapp.model.Message;
 import com.bijay.example.chatapp.service.ConversationService;
+<<<<<<< HEAD
 import com.bijay.example.chatapp.service.DynamicOrderMessage;
+=======
+>>>>>>> ab25700f10cbf2572ff13d77940e617a5d1a5ad5
 import com.bijay.example.chatapp.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -37,6 +40,7 @@ public class ConversationAdminController {
     @Autowired
     private MessageService messageService;
 
+<<<<<<< HEAD
 //    private Sort.Direction getSortingDirection(String direction) {
 //        if (direction.equals("asc")) {
 //            return Sort.Direction.ASC;
@@ -58,6 +62,29 @@ public class ConversationAdminController {
 //        }
 //        return orders;
 //    }
+=======
+    private Sort.Direction getSortingDirection(String direction) {
+        if (direction.equals("asc")) {
+            return Sort.Direction.ASC;
+        } else if (direction.equals("desc")) {
+            return Sort.Direction.DESC;
+        }
+        return Sort.Direction.ASC;
+    }
+
+    private List<Order> getOrders(String[] sort) {
+        List<Order> orders = new ArrayList<>();
+        if (sort[0].contains(",")) {
+            for (String sortOrder : sort) {
+                String[] _sort = sortOrder.split(",");
+                orders.add(new Order(getSortingDirection(_sort[1]), _sort[0]));
+            }
+        } else {
+            orders.add(new Order(getSortingDirection(sort[1]), sort[0]));
+        }
+        return orders;
+    }
+>>>>>>> ab25700f10cbf2572ff13d77940e617a5d1a5ad5
 
     @GetMapping("/conversations/all")
     public ResponseEntity<Map<String, Object>> getAllConversationAdminPages(
@@ -66,7 +93,11 @@ public class ConversationAdminController {
             @RequestParam(defaultValue = "10") int size,
             @RequestParam(defaultValue = "created, desc") String[] sort) {
         try {
+<<<<<<< HEAD
             List<Order> orders = DynamicOrderMessage.getOrders(sort);
+=======
+            List<Order> orders = getOrders(sort);
+>>>>>>> ab25700f10cbf2572ff13d77940e617a5d1a5ad5
 //          Pageable pageable = new PageRequest(page, size, new Sort(orders));
             Pageable pageable = PageRequest.of(page, size, Sort.by(orders));
             Page<ConversationDTO> conversationDTOPage = conversationService.getAllConversationPages(
