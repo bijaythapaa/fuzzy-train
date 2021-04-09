@@ -5,5 +5,6 @@ package com.bijay.example.chatapp.model;
  * @Project chatapp
  * @created 4/5/21 - 10:25 AM
  */
+
 public class Bank {
 }

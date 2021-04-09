@@ -43,14 +43,14 @@ public class Message extends AbstractEntity<Long> {
 
 
     //    @ManyToOne(fetch = FetchType.LAZY)
-    //    @ManyToOne(fetch = FetchType.LAZY)
+//    @ManyToOne(fetch = FetchType.LAZY)
 //    @JsonIgnore
 //    private User toUser;
     @Nullable
     private Long toUserId;
 
     //    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    //    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+//    @ManyToOne(fetch = FetchType.LAZY, optional = false)
 //    @NotNull
 //    @JsonIgnore
 //    private Bank bank;

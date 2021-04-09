@@ -37,8 +37,7 @@ public class MessageService {
             message.setMessage(msg);
             if (s.equals("Bank")) {
                 message.setToUserId(userId);
-            }
-            else {
+            } else {
                 message.setFromUserId(userId);
             }
             Conversation conversation = conversationRepository.findConversationByUserIdAndBankId(userId, bankId);

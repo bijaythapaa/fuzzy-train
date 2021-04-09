@@ -1,9 +1,9 @@
 package com.bijay.example.chatapp.model;
 
-import com.sun.istack.NotNull;
-import lombok.*;
-
-import javax.persistence.Entity;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 /**
  * @Author Bijay Thapa
@@ -11,6 +11,7 @@ import javax.persistence.Entity;
  * @created 4/5/21 - 10:25 AM
  */
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
