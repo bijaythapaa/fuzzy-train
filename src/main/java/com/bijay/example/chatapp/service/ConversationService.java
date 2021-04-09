@@ -14,10 +14,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-<<<<<<< HEAD
-=======
 import java.util.ArrayList;
->>>>>>> ab25700f10cbf2572ff13d77940e617a5d1a5ad5
 import java.util.List;
 
 /**
@@ -41,67 +38,61 @@ public class ConversationService {
 //    @Autowired
 //    private ConvertUtil convertUtil;
 
-<<<<<<< HEAD
     @Transactional
     public Page<ConversationDTO> getAllConversationPages(Long bankId, Pageable pageable) {
         Page<Conversation> conversations = conversationRepository.findAllByBankId(bankId, pageable);
         List<ConversationDTO> conversationDTOS = ToDTOConverter.convertToConversationDTO(conversations.getContent());
-=======
-    private List<ConversationDTO> convertToConversationDTO(List<Conversation> conversations) {
-        List<ConversationDTO> conversationDTOS = new ArrayList<>();
-        for (Conversation conversation : conversations) {
-            ConversationDTO conversationDTO = new ConversationDTO();
-            conversationDTO.setId(conversation.getId());
-            conversationDTO.setLastMessage(conversation.getLastMessage().getMessage());
-            conversationDTO.setBankId(conversation.getBankId());
-            conversationDTO.setUserId(conversation.getUserId());
+        private List<ConversationDTO> convertToConversationDTO (List < Conversation > conversations) {
+            List<ConversationDTO> conversationDTOS = new ArrayList<>();
+            for (Conversation conversation : conversations) {
+                ConversationDTO conversationDTO = new ConversationDTO();
+                conversationDTO.setId(conversation.getId());
+                conversationDTO.setLastMessage(conversation.getLastMessage().getMessage());
+                conversationDTO.setBankId(conversation.getBankId());
+                conversationDTO.setUserId(conversation.getUserId());
 
 //            CustomerDTO customerDTO = convertUtil.convertCustomer(customerRepository.getCustomerByUser(
 //            conversationRepository.findUserByConversationId(conversation.getId()).getId()));
 //            conversationDTO.setCustomerFullName(customerDTO.getFullName());
 //            conversationDTO.setCustomerMobileNumber(customerDTO.getMobileNumber());
 //            conversationDTO.setBankFullName(conversation.getBank().getName());
-            conversationDTOS.add(conversationDTO);
+                conversationDTOS.add(conversationDTO);
+            }
+            return conversationDTOS;
         }
-        return conversationDTOS;
-    }
 
-    private List<MessageDTO> convertToMessageDTO(List<Message> messages) {
-        List<MessageDTO> messageDTOS = new ArrayList<>();
-        for (Message message : messages) {
-            MessageDTO messageDTO = new MessageDTO();
-            messageDTO.setId(message.getId());
-            messageDTO.setMessage(message.getMessage());
-            messageDTO.setStatus(message.getStatus());
-            messageDTO.setCreatedDate(message.getCreated().toString());
-            messageDTO.setSentBy(message.getSentBy());
-            messageDTO.setImageUrl(message.getImageUrl());
-            messageDTOS.add(messageDTO);
+        private List<MessageDTO> convertToMessageDTO (List < Message > messages) {
+            List<MessageDTO> messageDTOS = new ArrayList<>();
+            for (Message message : messages) {
+                MessageDTO messageDTO = new MessageDTO();
+                messageDTO.setId(message.getId());
+                messageDTO.setMessage(message.getMessage());
+                messageDTO.setStatus(message.getStatus());
+                messageDTO.setCreatedDate(message.getCreated().toString());
+                messageDTO.setSentBy(message.getSentBy());
+                messageDTO.setImageUrl(message.getImageUrl());
+                messageDTOS.add(messageDTO);
+            }
+            return messageDTOS;
         }
-        return messageDTOS;
-    }
 
-    @Transactional
-    public Page<ConversationDTO> getAllConversationPages(Long bankId, Pageable pageable) {
-        Page<Conversation> conversations = conversationRepository.findAllByBankId(bankId, pageable);
-        List<ConversationDTO> conversationDTOS = convertToConversationDTO(conversations.getContent());
->>>>>>> ab25700f10cbf2572ff13d77940e617a5d1a5ad5
-        return new PageImpl<>(conversationDTOS, pageable, conversations.getSize());
-    }
-
-    @Transactional
-    public List<MessageDTO> getAllMessages(Long convId) {
-        List<Message> messages = messageRepository.findAllByConversationId(convId);
-        for (Message message : messages) {
-            message.setStatus(Status.DELIVERED);
+        @Transactional
+        public Page<ConversationDTO> getAllConversationPages (Long bankId, Pageable pageable){
+            Page<Conversation> conversations = conversationRepository.findAllByBankId(bankId, pageable);
+            List<ConversationDTO> conversationDTOS = convertToConversationDTO(conversations.getContent());
+            return new PageImpl<>(conversationDTOS, pageable, conversations.getSize());
         }
-        messageRepository.saveAll(messages);
-        List<Message> messagesList = messageRepository.findAllByConversationId(convId);
-<<<<<<< HEAD
-        return ToDTOConverter.convertToMessageDTO(messagesList);
-=======
-        return convertToMessageDTO(messagesList);
->>>>>>> ab25700f10cbf2572ff13d77940e617a5d1a5ad5
-    }
 
-}
+        @Transactional
+        public List<MessageDTO> getAllMessages (Long convId){
+            List<Message> messages = messageRepository.findAllByConversationId(convId);
+            for (Message message : messages) {
+                message.setStatus(Status.DELIVERED);
+            }
+            messageRepository.saveAll(messages);
+            List<Message> messagesList = messageRepository.findAllByConversationId(convId);
+            return ToDTOConverter.convertToMessageDTO(messagesList);
+            return convertToMessageDTO(messagesList);
+        }
+
+    }

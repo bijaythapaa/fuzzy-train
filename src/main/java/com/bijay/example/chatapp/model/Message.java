@@ -34,31 +34,23 @@ public class Message extends AbstractEntity<Long> {
     @JsonIgnore
     private Conversation conversation;
 
-<<<<<<< HEAD
-//    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-=======
     //    @ManyToOne(fetch = FetchType.LAZY, optional = false)
->>>>>>> ab25700f10cbf2572ff13d77940e617a5d1a5ad5
+//    @ManyToOne(fetch = FetchType.LAZY, optional = false)
 //    @JsonIgnore
 //    private User fromUser;
     @NotNull
     private Long fromUserId;
 
-<<<<<<< HEAD
-//    @ManyToOne(fetch = FetchType.LAZY)
-=======
+
     //    @ManyToOne(fetch = FetchType.LAZY)
->>>>>>> ab25700f10cbf2572ff13d77940e617a5d1a5ad5
+    //    @ManyToOne(fetch = FetchType.LAZY)
 //    @JsonIgnore
 //    private User toUser;
     @Nullable
     private Long toUserId;
 
-<<<<<<< HEAD
-//    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-=======
     //    @ManyToOne(fetch = FetchType.LAZY, optional = false)
->>>>>>> ab25700f10cbf2572ff13d77940e617a5d1a5ad5
+    //    @ManyToOne(fetch = FetchType.LAZY, optional = false)
 //    @NotNull
 //    @JsonIgnore
 //    private Bank bank;
