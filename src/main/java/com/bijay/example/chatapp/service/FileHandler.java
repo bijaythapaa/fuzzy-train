@@ -39,9 +39,9 @@ public class FileHandler {
             try {
                 String filePath;
                 if (SystemUtils.IS_OS_LINUX)
-                    filePath = "/opt/mbank/chatimage";
+                    filePath = "/opt/images/chatimage";
                 else
-                    filePath = "D:/mbank/chatimage";
+                    filePath = "D:/images/chatimage";
                 File dir = new File(filePath);
                 if (!dir.exists()) dir.mkdirs();
                 dir = new File(filePath + File.separator + document.getIdentifier());
@@ -65,9 +65,9 @@ public class FileHandler {
                 byte[] bytes = file.getBytes();
                 String filePath = "";
                 if (SystemUtils.IS_OS_LINUX) {
-                    filePath = "/opt/mbank/" + folder;
+                    filePath = "/opt/images/" + folder;
                 } else {
-                    filePath = "D:/mbank/" + folder;
+                    filePath = "D:/images/" + folder;
                 }
                 dir = new File(filePath);
                 if (!dir.exists()) {
