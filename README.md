@@ -25,9 +25,9 @@ import org.apache.commons.lang3.SystemUtils;
 public class FileHandler {
     String filePath;
     if(SystemUtils.IS_OS_LINUX) {
-        filePath = "/opt/mbank/chatimage";
+        filePath = "/opt/images/chatimage";
     } else {
-        filePath = "D:/mbank/chatimage";
+        filePath = "D:/images/chatimage";
     }
 }
 ```
