@@ -32,8 +32,8 @@ public class FileHandler {
 }
 ```
 
-- So, If your OS is Linux then the files would be saved in '/opt/mbank/chatimage' folder and if your OS is other than
-  Linux then the files would be saved inside 'D:/mbank/chatimage' folder. You can also change the containing folder as
+- So, If your OS is Linux then the files would be saved in '/opt/images/chatimage' folder and if your OS is other than
+  Linux then the files would be saved inside 'D:/images/chatimage' folder. You can also change the containing folder as
   you want.
 
 - and, I have also added Pagination and Sorting feature in this project. You can see it in code.
