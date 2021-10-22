@@ -4,7 +4,7 @@ a RESTful Messaging API in Spring Boot Gradle project !!
 
 In this project, I have tried to build a simple Messaging application between two end-users like Bank and Customer.
 
-This project Gradle dependency manager with MySQL database and more it uses Spring Data JPA, Lombok for decrease
+This project depends on Gradle dependency manager with MySQL database and more it uses Spring Data JPA, Lombok for decrease
 boilerplate codes, DevTools, Actuators and more.
 
 **Key Feature:**
